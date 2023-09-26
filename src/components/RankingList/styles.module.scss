@@ -8,8 +8,8 @@
 
   @media screen and (max-width: 900px) {
     grid-template-columns: 1fr;
-    margin-left: 2.5rem;
-    margin-right: 2.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 }
 
@@ -24,6 +24,13 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+
+  @media screen and (max-width: 900px) {
+    width: auto;
+    border: none;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
 }
 
 .podium {

@@ -20,7 +20,6 @@ const OtherUserRanking: React.FC<IOtherUserRanking> = ({
       <span data-revenue className={S.revenue}>
         {revenue}
       </span>
-      <button>Jornada do afiliado</button>
     </li>
   );
 };
