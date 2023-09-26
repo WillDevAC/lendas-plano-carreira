@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 6rem;
+  background-color: #111617;
+  border-bottom: 1px solid #373a3b;
+  padding-left: 8rem;
+  padding-right: 8rem;
+  @media screen and (max-width: 900px) {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+.header img {
+  max-width: 220px;
+}
+
+.header button {
+  background-color: #e8a75b;
+  border: none;
+  padding: 0.6rem;
+  width: 10rem;
+  border-radius: 0.2rem;
+  font-size: 0.9rem;
+  color: #111617;
+  font-weight: 500;
+}

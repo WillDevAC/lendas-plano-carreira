@@ -1,0 +1,65 @@
+ .li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: min(30%, 5rem);
+}
+
+ .li .user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #151b1b;
+  width: 7.5rem;
+  height: 7.5rem;
+  border-radius: 50%;
+  border: 0.2rem solid #e8a75b;
+  transition: scale 0.3s;
+}
+
+.li .user h1 {
+  text-transform: uppercase;
+}
+
+ .li .user:hover {
+  scale: 1.05;
+  cursor: pointer;
+}
+
+ .li:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translatex(-50%);
+  width: 8.5rem;
+  height: 15rem;
+  z-index: 200;
+  margin: unset;
+}
+
+ .li p {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+ .li span {
+  font-size: 1.5rem;
+}
+
+ #crown {
+  width: 3rem;
+  height: 3rem;
+  border: unset;
+  padding: unset;
+  -webkit-animation: crown-animation 2s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: crown-animation 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+ .revenue {
+  color: #03b169;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
