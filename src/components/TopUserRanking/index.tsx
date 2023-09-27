@@ -13,7 +13,6 @@ const TopUserRanking: React.FC<ITopUserRanking> = ({
   name,
   revenue,
   position,
-  surname,
 }) => {
   return (
     <li className={S.li}>
