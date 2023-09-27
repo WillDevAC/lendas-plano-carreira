@@ -3,6 +3,7 @@ import App from "./App.tsx";
 
 import { QueryClient, QueryClientProvider } from "react-query";
 
+import 'rodal/lib/rodal.css';
 import "./styles/global.scss";
 
 const queryClient = new QueryClient();

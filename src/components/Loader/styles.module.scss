@@ -1,0 +1,29 @@
+.loaderContainer {
+    position: absolute;
+    background-color: #111617;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+}
+
+.loaderContainer img {
+    max-width: 250px;
+    animation: fadeInOut 3s ease infinite; 
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0; 
+    }
+    50% {
+        opacity: 1; 
+    }
+    100% {
+        opacity: 0; 
+    }
+}

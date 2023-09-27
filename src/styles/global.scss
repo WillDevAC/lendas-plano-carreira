@@ -24,7 +24,6 @@ body {
     scrollbar-color: #03b169;
   }
   
-  /* Chrome, Edge, and Safari */
   *::-webkit-scrollbar {
     width: 8px;
   }
@@ -36,4 +35,9 @@ body {
   *::-webkit-scrollbar-thumb {
     background-color: #03b169;
     border-radius: 10px;
+  }
+
+
+  .rodal-dialog {
+    background-color: #151b1b;
   }
