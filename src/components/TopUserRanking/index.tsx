@@ -17,10 +17,9 @@ const TopUserRanking: React.FC<ITopUserRanking> = ({
 }) => {
   return (
     <li className={S.li}>
-      <span>{position}</span>
       {position === 1 && <img id={S.crown} src="crown.svg" alt="coroa" />}
       <div className={S.user}>
-        <h1>{surname}</h1>
+        <h1>{position}</h1>
       </div>
       <p data-name-podium>{name}</p>
       <span data-revenue-podium className={S.revenue}>
