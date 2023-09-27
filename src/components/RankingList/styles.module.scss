@@ -10,6 +10,7 @@
     grid-template-columns: 1fr;
     margin-left: 1rem;
     margin-right: 1rem;
+    margin-top: 0.5rem;
   }
 }
 
@@ -28,8 +29,6 @@
   @media screen and (max-width: 900px) {
     width: auto;
     border: none;
-    margin-left: 2rem;
-    margin-right: 2rem;
   }
 }
 
