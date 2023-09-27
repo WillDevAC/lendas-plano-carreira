@@ -104,3 +104,24 @@
   color: #03b169;
   width: min(30%, 20rem);
 }
+
+.More {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.More button {
+  font-size: 0.9rem;
+  display: flex;
+  cursor: pointer;
+  border: none;
+  background-color: #bc8a4e;
+  padding: 0.7rem;
+}
+
+.More button:hover {
+  background-color: rgb(144, 103, 54);
+}

@@ -22,6 +22,10 @@
 }
 
 .header button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   background-color: #e8a75b;
   border: none;
   padding: 0.6rem;
@@ -30,4 +34,9 @@
   font-size: 0.9rem;
   color: #111617;
   font-weight: 500;
+}
+
+.header button:hover {
+  cursor: pointer;
+  background-color: rgb(144, 103, 54);
 }
