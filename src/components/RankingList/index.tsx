@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { useQuery } from "react-query";
+
 import TopUserRanking from "../TopUserRanking";
 import OtherUserRanking from "../OtherUserRanking";
-import { useQuery } from "react-query";
+
 import axios from "axios";
 
 import S from "./styles.module.scss";
@@ -74,7 +76,7 @@ const RankingList: React.FC = () => {
           {showMore < otherRankingList.length && (
             <div className={S.More}>
               <button onClick={handleShowMore}>Mostrar mais resultados</button>
-              <ModalRewards/>
+              <ModalRewards />
             </div>
           )}
         </div>
