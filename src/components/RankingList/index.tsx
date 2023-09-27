@@ -84,7 +84,6 @@ const RankingList: React.FC = () => {
             <div className={S.More}>
               <button onClick={handleShowMore}>Mostrar mais resultados</button>
               <button onClick={showModalRewards}>show</button>
-              <ModalRewards setVisible={setVisible} visible={visible} />
             </div>
           )}
         </div>
