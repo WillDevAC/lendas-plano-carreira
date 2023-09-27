@@ -5,8 +5,8 @@ import TopUserRanking from "../TopUserRanking";
 import OtherUserRanking from "../OtherUserRanking";
 
 import axios from "axios";
-
 import S from "./styles.module.scss";
+
 import Loader from "../Loader";
 import ModalRewards from "../ModalRewards";
 
@@ -33,6 +33,13 @@ const RankingList: React.FC = () => {
         setOtherRankList(response.data.Others);
       });
   });
+
+  const [visible, setVisible] = useState(false);
+
+  const showModalRewards = () => {
+    setVisible(true);
+    document.body.classList.add("no-scroll");
+  };
 
   const handleShowMore = () => {
     setShowMore((prevShowMore) => prevShowMore + 10);
@@ -76,7 +83,8 @@ const RankingList: React.FC = () => {
           {showMore < otherRankingList.length && (
             <div className={S.More}>
               <button onClick={handleShowMore}>Mostrar mais resultados</button>
-              <ModalRewards />
+              <button onClick={showModalRewards}>show</button>
+              <ModalRewards setVisible={setVisible} visible={visible} />
             </div>
           )}
         </div>

@@ -4,21 +4,24 @@ import S from "./styles.module.scss";
 
 import Rodal from "rodal";
 
-const ModalRewards: React.FC = () => {
-  const [visible, setVisible] = useState(false);
+interface IModalRewards {
+  setVisible: Function;
+  visible: boolean;
+}
 
-  const show = () => {
-    setVisible(true);
-  };
-
-  const hide = () => {
+const ModalRewards: React.FC<IModalRewards> = ({ setVisible, visible }) => {
+  const hideModalRewards = () => {
     setVisible(false);
+    document.body.classList.remove("no-scroll");
   };
+
   return (
     <div>
-      <button onClick={show}>show</button>
-
-      <Rodal visible={visible} onClose={hide} className={S.custom_modal}>
+      <Rodal
+        visible={visible}
+        onClose={hideModalRewards}
+        className={S.custom_modal}
+      >
         <div className={S.modal_content}>Content</div>
       </Rodal>
     </div>
