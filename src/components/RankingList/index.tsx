@@ -8,7 +8,6 @@ import axios from "axios";
 import S from "./styles.module.scss";
 
 import Loader from "../Loader";
-import ModalRewards from "../ModalRewards";
 
 interface IRankListResponse {
   user: string;
@@ -34,12 +33,6 @@ const RankingList: React.FC = () => {
       });
   });
 
-  const [visible, setVisible] = useState(false);
-
-  const showModalRewards = () => {
-    setVisible(true);
-    document.body.classList.add("no-scroll");
-  };
 
   const handleShowMore = () => {
     setShowMore((prevShowMore) => prevShowMore + 10);
@@ -83,7 +76,6 @@ const RankingList: React.FC = () => {
           {showMore < otherRankingList.length && (
             <div className={S.More}>
               <button onClick={handleShowMore}>Mostrar mais resultados</button>
-              <button onClick={showModalRewards}>show</button>
             </div>
           )}
         </div>
