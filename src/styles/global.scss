@@ -44,4 +44,10 @@ body {
     height: 42rem!important;
     background-color: #151b1b;
     border-radius: 0.3rem;
+
+    @media screen and (max-width: 900px) {
+      width: 23rem!important;
+      height: 44rem!important;
+      overflow-y: scroll;
+    }
   }

@@ -50,7 +50,7 @@ const RankingList: React.FC = () => {
       <main className={S.RankingContainer}>
         <section className={S.topRanking}>
           <div className={S.podium}>
-          <h1>Lendas Ranking</h1>
+          <h1>Ranking afiliados</h1>
             <ul>
               {topRankingList.slice(0, showMore).map((list, index) => (
                 <TopUserRanking
