@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import S from "./styles.module.scss";
 import Rodal from "rodal";
 import CardsRewards from "../CardsRewards";
@@ -11,6 +11,7 @@ interface IModalRewards {
   registrations?: string | undefined;
   setVisible: React.Dispatch<React.SetStateAction<boolean>>;
   visible: boolean;
+  deposits?: number | undefined,
 }
 
 const ModalRewards: React.FC<IModalRewards> = ({
@@ -20,11 +21,23 @@ const ModalRewards: React.FC<IModalRewards> = ({
   deposit_formatted,
   position,
   surname,
+  deposits,
   registrations,
 }) => {
+  useEffect(() => {
+    if (visible) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+
+    return () => {
+      document.body.classList.remove("no-scroll");
+    };
+  }, [visible]);
+
   const hideModalRewards = () => {
     setVisible(false);
-    document.body.classList.remove("no-scroll");
   };
 
   return (
@@ -58,7 +71,7 @@ const ModalRewards: React.FC<IModalRewards> = ({
           <div className={S.rewards__title}>
             <h1>Missões</h1>
           </div>
-          <CardsRewards />
+          <CardsRewards deposits={deposits}/>
         </div>
       </Rodal>
     </div>

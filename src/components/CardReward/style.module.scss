@@ -1,0 +1,66 @@
+.card {
+  flex: 0 0 400px;
+  height: 12rem;
+  background: linear-gradient(to bottom, #232323, #111);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  position: relative;
+  border: 1px solid #e8a75b;
+  border-radius: 0.2rem;
+
+  @media screen and (max-width: 900px) {
+    height: 10rem;
+  }
+}
+
+.card span {
+  font-size: 32px;
+  color: rgba(255, 255, 255, 0.1); /* Cor da marca d'água */
+  pointer-events: none;
+}
+
+.status__revenue {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    margin: 0.5rem;
+    left: 0;
+    padding: 0.1rem;
+    width: 8rem;
+    border-radius: 5px;
+}
+
+#pending {
+  background-color: brown;
+}
+
+#completed {
+  background-color: #03b169;
+}
+
+.status__revenue span {
+  font-size: 1rem;
+  color: white;
+}
+
+
+.info_reward {
+  display: flex;
+  margin: 0.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.tolltip__info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}

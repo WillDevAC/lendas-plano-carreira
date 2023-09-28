@@ -9,7 +9,7 @@ import OtherUserRanking from "../OtherUserRanking";
 
 interface IRankListResponse {
   user: string;
-  deposits: string;
+  deposits: number;
   deposit_formatted: string;
   surname: string;
   position: string;
