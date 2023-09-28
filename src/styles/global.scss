@@ -15,6 +15,7 @@ body {
     font-family: 'Nunito', sans-serif;
     background-color: var(--background);
     color: var(--white);
+    overflow-x: hidden;
 }
 
 /* ===== Scrollbar CSS ===== */
@@ -39,5 +40,8 @@ body {
 
 
   .rodal-dialog {
+    width: 35rem!important;
+    height: 42rem!important;
     background-color: #151b1b;
+    border-radius: 0.3rem;
   }

@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import { useQuery } from "react-query";
-
-import TopUserRanking from "../TopUserRanking";
-import OtherUserRanking from "../OtherUserRanking";
-
 import axios from "axios";
 import S from "./styles.module.scss";
-
 import Loader from "../Loader";
+import ModalRewards from "../ModalRewards";
+import TopUserRanking from "../TopUserRanking";
+import OtherUserRanking from "../OtherUserRanking";
 
 interface IRankListResponse {
   user: string;
@@ -15,6 +13,7 @@ interface IRankListResponse {
   deposit_formatted: string;
   surname: string;
   position: string;
+  registrations: string;
 }
 
 const RankingList: React.FC = () => {
@@ -23,6 +22,9 @@ const RankingList: React.FC = () => {
     []
   );
   const [showMore, setShowMore] = useState<number>(10);
+  const [visible, setVisible] = useState(false);
+  const [selectedUserData, setSelectedUserData] =
+    useState<IRankListResponse | null>(null);
 
   const { isLoading } = useQuery("getRankingList", () => {
     return axios
@@ -33,22 +35,22 @@ const RankingList: React.FC = () => {
       });
   });
 
+  const showModalRewards = (userData: IRankListResponse | null) => {
+    setSelectedUserData(userData);
+    setVisible(true);
+    document.body.classList.add("no-scroll");
+  };
 
   const handleShowMore = () => {
     setShowMore((prevShowMore) => prevShowMore + 10);
   };
-
-  if (isLoading) {
-    document.body.classList.add("no-scroll");
-  } else {
-    document.body.classList.remove("no-scroll");
-  }
 
   return (
     <>
       <main className={S.RankingContainer}>
         <section className={S.topRanking}>
           <div className={S.podium}>
+          <h1>Lendas Ranking</h1>
             <ul>
               {topRankingList.slice(0, showMore).map((list, index) => (
                 <TopUserRanking
@@ -65,17 +67,25 @@ const RankingList: React.FC = () => {
         <div className={S.otherRanking}>
           <ul data-aos="fade-right">
             {otherRankingList.slice(0, showMore).map((list, index) => (
-              <OtherUserRanking
-                key={index}
-                position={parseInt(list.position)}
-                name={list.user}
-                revenue={list.deposit_formatted}
-              />
+              <div key={index} onClick={() => showModalRewards(list)}>
+                <OtherUserRanking
+                  position={parseInt(list.position)}
+                  name={list.user}
+                  revenue={list.deposit_formatted}
+                />
+              </div>
             ))}
           </ul>
           {showMore < otherRankingList.length && (
             <div className={S.More}>
               <button onClick={handleShowMore}>Mostrar mais resultados</button>
+              {visible && (
+                <ModalRewards
+                  setVisible={setVisible}
+                  visible={visible}
+                  {...selectedUserData}
+                />
+              )}
             </div>
           )}
         </div>

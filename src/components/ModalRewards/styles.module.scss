@@ -1,8 +1,89 @@
-.custom_modal{
-    z-index: 999;
-    background-color: #111617;
+.custom_modal {
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.8); 
+  backdrop-filter: blur(5px); 
 }
 
 .modal_content {
-    background-color: #151b1b;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: #151b1b;
+}
+
+.modal__title {
+  display: flex;
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h1 b {
+    color: #03b169;
+  }
+}
+
+.profile__information {
+  display: flex;
+  align-items: center;
+  height: auto;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.profile__revenue {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+
+  h1 {
+    color: #03b169;
+    font-size: 2rem;
+  }
+
+  span {
+    text-transform: uppercase;
+  }
+}
+
+.profile__picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0c0f10;
+  width: 10rem;
+  height: 10rem;
+  border: 2px solid #e8a75b;
+  border-radius: 0.3rem;
+  border-radius: 50%;
+}
+
+.profile__picture h1 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.rewards__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+.rewards__title__more__info {
+  display: flex;
+  align-items: center;
+}
+
+.rewards__list {
+  display: flex;
+  width: 100%;
 }

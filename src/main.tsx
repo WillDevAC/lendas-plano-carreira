@@ -3,6 +3,7 @@ import App from "./App.tsx";
 
 import { QueryClient, QueryClientProvider } from "react-query";
 
+import 'rsuite/dist/rsuite.min.css';
 import 'rodal/lib/rodal.css';
 import "./styles/global.scss";
 
