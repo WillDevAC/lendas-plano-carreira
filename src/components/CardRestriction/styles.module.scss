@@ -1,0 +1,22 @@
+.card__restriction {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1a483b;
+    padding: 0.6rem;
+    font-size: 0.9rem;
+    border-radius: 0.3rem;
+}
+
+.card__restriction__action button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: brown;
+    padding: 0.2rem;
+    border-radius: 0.3rem;
+
+    &:hover {
+        background-color: crimson;
+    }
+}

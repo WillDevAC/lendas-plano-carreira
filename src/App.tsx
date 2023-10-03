@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Ranking from './pages/Ranking';
+import Routes from './routes/routes';
 
 const App: React.FC = () => {
-  return <Ranking/>;
+  return <Routes/>;
 }
 
 export default App;

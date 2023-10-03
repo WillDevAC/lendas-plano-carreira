@@ -14,13 +14,16 @@ const OtherUserRanking: React.FC<IOtherUserRanking> = ({
   revenue,
 }) => {
   return (
-    <li className={S.other__li}>
+    <>
+      <li className={S.other__li}>
       <span>#{position}</span>
       <p data-name>{name}</p>
       <span data-revenue className={S.revenue}>
         {revenue}
       </span>
     </li>
+    
+    </>
   );
 };
 
