@@ -133,3 +133,24 @@
 .More button:hover {
   background-color: rgb(144, 103, 54);
 }
+
+.otherRankingSearch {
+  display: flex;
+  margin-bottom: 1rem;
+  justify-content: flex-end;
+}
+
+.otherRankingSearch input {
+  width: 15rem;
+  border: 1px solid #373a3b;
+  padding: 0.5rem;
+  background: none;
+  border-radius: 0.3rem;
+  outline: #1a483b;
+  font-size: 0.9rem;
+
+  @media screen and (max-width: 900px) {
+    height: 3rem;
+    width: 100%;
+  }
+}
