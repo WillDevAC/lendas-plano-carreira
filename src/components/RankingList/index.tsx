@@ -6,6 +6,7 @@ import Loader from "../Loader";
 import ModalRewards from "../ModalRewards";
 import TopUserRanking from "../TopUserRanking";
 import OtherUserRanking from "../OtherUserRanking";
+import CardRules from "../CardRules";
 
 interface IRankListResponse {
   user: string;
@@ -73,6 +74,7 @@ const RankingList: React.FC = () => {
               ))}
             </ul>
           </div>
+          <CardRules/>
         </section>
         <div className={S.otherRanking}>
           <div className={S.otherRankingSearch}>

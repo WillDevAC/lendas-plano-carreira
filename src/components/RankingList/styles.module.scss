@@ -15,20 +15,18 @@
 }
 
 .topRanking {
-  border: 1px solid #373a3b;
   padding: 1rem;
   border-radius: 0.5rem;
   width: 30rem;
-  height: 30rem;
+  height: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   margin: 0 auto;
 
   @media screen and (max-width: 900px) {
-    width: auto;
+    width: 100%;
     border: none;
+    padding: 0;
   }
 }
 
@@ -38,6 +36,9 @@
   justify-content: center;
   flex-direction: column;
   width: 100%;
+  border-radius: 0.3rem;
+  border: 1px solid #373a3b;
+
   padding-top: 4rem;
 
   h1 {
@@ -45,6 +46,11 @@
     font-size: 2.5rem;
     margin-bottom: 2rem;
   }
+  
+  @media screen and (max-width: 900px) {
+    border: none;
+  }
+
 }
 
 .topRanking ul {
