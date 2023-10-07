@@ -4,14 +4,14 @@ import Rodal from "rodal";
 import CardsRewards from "../CardsRewards";
 
 interface IModalRewards {
-  user?: string | undefined;
-  deposit_formatted?: string | undefined;
-  surname?: string | undefined;
-  position?: string | undefined;
-  registrations?: string | undefined;
+  user?: string;
+  deposit_formatted?: string;
+  surname?: string;
+  position?: string;
+  registrations?: string;
   setVisible: React.Dispatch<React.SetStateAction<boolean>>;
   visible: boolean;
-  deposits?: number | undefined,
+  deposits?: number;
 }
 
 const ModalRewards: React.FC<IModalRewards> = ({
@@ -40,6 +40,11 @@ const ModalRewards: React.FC<IModalRewards> = ({
     setVisible(false);
   };
 
+  const formatter = new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+  });
+
   return (
     <div>
       <Rodal
@@ -59,11 +64,11 @@ const ModalRewards: React.FC<IModalRewards> = ({
             </div>
             <div className={S.profile__revenue}>
               <div className={S.profile__revenue__info}>
-                <h1>{deposit_formatted}</h1>
+                <h1>{deposits !== undefined ? formatter.format(deposits) : 'N/A'}</h1>
                 <span>Dépositos</span>
               </div>
               <div className={S.profile__revenue__info}>
-                <h1>{registrations}</h1>
+                <h1>{registrations !== undefined ? registrations : 'N/A'}</h1>
                 <span>CADASTROS</span>
               </div>
             </div>
@@ -71,7 +76,7 @@ const ModalRewards: React.FC<IModalRewards> = ({
           <div className={S.rewards__title}>
             <h1>Missões</h1>
           </div>
-          <CardsRewards deposits={deposits}/>
+          <CardsRewards deposits={deposits !== undefined ? deposits : 0} />
         </div>
       </Rodal>
     </div>

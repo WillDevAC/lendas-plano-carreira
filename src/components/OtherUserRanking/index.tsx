@@ -12,10 +12,10 @@ const OtherUserRanking: React.FC<IOtherUserRanking> = ({
   name,
   revenue,
 }) => {
-  // Use toLocaleString para formatar o número com duas casas decimais e remover zeros à direita.
-  const formattedRevenue = revenue.toLocaleString("pt-BR", {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
+
+  const formatter = new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
   });
 
   return (
@@ -24,7 +24,7 @@ const OtherUserRanking: React.FC<IOtherUserRanking> = ({
         <span>#{position}</span>
         <p data-name>{name}</p>
         <span data-revenue className={S.revenue}>
-          R$ {formattedRevenue}
+          {formatter.format(revenue)}
         </span>
       </li>
     </>
