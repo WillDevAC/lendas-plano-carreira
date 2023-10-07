@@ -18,7 +18,6 @@ const ModalRewards: React.FC<IModalRewards> = ({
   setVisible,
   visible,
   user,
-  deposit_formatted,
   position,
   surname,
   deposits,
@@ -40,9 +39,9 @@ const ModalRewards: React.FC<IModalRewards> = ({
     setVisible(false);
   };
 
-  const formatter = new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL',
+  const formatter = new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
   });
 
   return (
@@ -64,11 +63,13 @@ const ModalRewards: React.FC<IModalRewards> = ({
             </div>
             <div className={S.profile__revenue}>
               <div className={S.profile__revenue__info}>
-                <h1>{deposits !== undefined ? formatter.format(deposits) : 'N/A'}</h1>
+                <h1>
+                  {deposits !== undefined ? formatter.format(deposits) : "N/A"}
+                </h1>
                 <span>Dépositos</span>
               </div>
               <div className={S.profile__revenue__info}>
-                <h1>{registrations !== undefined ? registrations : 'N/A'}</h1>
+                <h1>{registrations !== undefined ? registrations : "N/A"}</h1>
                 <span>CADASTROS</span>
               </div>
             </div>
