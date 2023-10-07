@@ -96,7 +96,7 @@ const RankingList: React.FC = () => {
                   <OtherUserRanking
                     position={parseInt(list.position)}
                     name={list.user}
-                    revenue={list.deposit_formatted}
+                    revenue={list.deposits}
                   />
                 </div>
               ))}
